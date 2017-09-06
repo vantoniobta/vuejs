@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vueJS</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+<body>
+   <div id="app">
+     <!--  <h1 v-html="intro"></h1> -->
+       <h1 v-bind:title="title">{{message}}</h1>
+       <img v-bind:src="url" v-bind:alt="title" v-bind:title="title">
+   </div>
+</body>
+<script src="https://unpkg.com/vue@2.4.2"></script>
+<script type="text/javascript">
+	var app = new Vue({
+		el   : '#app',
+		data : {
+			message : 'Hello vue JS',
+			title   : 'this is title:' + new Date(),
+			url     : 'https://vuejs.org/images/logo.png'
+		}
+	})
+</script>
+</html>

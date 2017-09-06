@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vueJS</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+<body>
+   <div id="app">
+       <h1>{{message}}</h1>
+       <ul>
+       	<li v-for="todo in todos">{{todo.id}} - {{todo.text}}</li>
+       </ul>
+   </div>
+</body>
+<script src="https://unpkg.com/vue@2.4.2"></script>
+<script type="text/javascript">
+	var app = new Vue({
+		el   : '#app',
+		data : {
+			message : 'Hello vue JS',
+			todos   : [
+			 { text : 'Learn VueJS', id: 2},
+			 { text : 'code and code', id : 4},
+			 { text : 'vantonio_lets->code',id: 6}
+			]
+		}
+	})
+</script>
+</html>

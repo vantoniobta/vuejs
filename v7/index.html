@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vueJS</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+<body>
+   <div id="app">
+       <h1>{{message}}</h1>
+       <p>
+       	Visit: <a v-bind:href="url">{{clearUrl}}</a>
+       </p>
+       <input type="text" class="form-control" v-model="url" />
+       <button @click="humanizeUrl" class="btn btn-primary">Humanize Me!</button>
+   </div>
+</body>
+<script src="https://unpkg.com/vue@2.4.2"></script>
+
+<script type="text/javascript">
+	var app = new Vue({
+		el   : '#app',
+		data : {
+			message: 'Hellow Vue World',
+			url    : "",
+			clearUrl: ""
+		},
+		methods :{
+			humanizeUrl : function(){
+				this.clearUrl = this.url.replace(/^https?:\/\//,'').replace(/\/$/, '')
+			}
+		}
+	})
+</script>
+
+</html>

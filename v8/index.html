@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vueJS</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+<body>
+   <div id="app" class="container">
+    <div class="row">
+    <div class="col-md-12 text-center">
+     <h1>Hello {{fullname}}</h1>
+     <ul class="text-left">
+      <li>First Name: {{first}}</li>
+      <li>Last Name: {{last}}</li>
+     </ul>
+     <hr>
+    </div>
+    </div>
+
+    <div class="row">
+     <div class="col-md-12">
+       <label>Full Name:</label>
+       <input type="text" class="form-control" v-model="fullname"/>
+     </div>
+    </div>
+
+    <div class="row">
+     <div class="col-md-6">
+	     <div class="form-group">
+	     	<label>First Name:</label>
+	     	  <input type="text" class="form-control" v-model="first"/>
+	     </div>
+     </div>
+     <div class="col-md-6">
+	     <div class="form-group">
+	     	<label>Last Name:</label>
+	     	  <input type="text" class="form-control" v-model="last"/>
+	     </div>
+     </div>
+    </div>
+
+
+
+
+
+
+   </div>
+</body>
+<script src="https://unpkg.com/vue@2.4.2"></script>
+
+<script type="text/javascript">
+	var app = new Vue({
+		el   : '#app',
+		data : {
+      first : '',
+      last  : ''
+		},
+    computed : {
+      fullname : {
+         get : function(){
+          return this.first + " " + this.last
+        },
+         set : function(value){
+           var name   = value.split('')
+           this.first = name[0]
+           this.last  = name[name.length - 1]
+         }
+      }
+    }
+	})
+</script>
+
+</html>

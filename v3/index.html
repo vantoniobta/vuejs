@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vueJS</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+<body>
+   <div id="app">
+     <!--  <h1 v-html="intro"></h1> -->
+       <h1 v-if="viewed">you have viewed this page</h1>
+       <h1 v-else="viewed">you have NOT viewed this page</h1>
+   </div>
+</body>
+<script src="https://unpkg.com/vue@2.4.2"></script>
+<script type="text/javascript">
+	var app = new Vue({
+		el   : '#app',
+		data : {
+			message : 'Hello vue JS',
+			intro   : 'welcome vantonio <small>it is javascript vuejs</small>',
+			viewed  : false
+		}
+	})
+</script>
+</html>
